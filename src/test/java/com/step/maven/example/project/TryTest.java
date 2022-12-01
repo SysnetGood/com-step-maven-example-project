@@ -1,4 +1,4 @@
-package com.step.maven.example.project.test;
+package com.step.maven.example.project;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ public class TryTest extends BaseTestClass {
 
     @Test
     public void verifyUsername () {
-        String username = System.getProperty("username");
-        Assertions.assertEquals("admin", username);
+        String username = System.getProperty("user-name");
+        Assertions.assertNotEquals("admin", username);
     }
 }

@@ -1,12 +1,17 @@
-package com.step.maven.example.project.test;
+package com.step.maven.example.project;
+
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public interface PropertiesReader {
 
-    default void readPropertiesFile() {
+@Service
+public class PropertiesWriter extends FileManager{
+
+    @Override
+    public void readPropertiesFile() {
         String line;
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\test.properties"));
